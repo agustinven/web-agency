@@ -4,8 +4,8 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <header className="lg:px-12 w-full py-4 xl:py-10">
-      <div className="container mx-auto">
+    <header className="w-full py-4 lg:py-8 border-b-[1px] border-b-gray-secondary">
+      <div className="px-6 lg:px-8">
         {/* logo, nav(desktop), btn */}
         <div className="flex items-center justify-between">
           {/* logo */}
@@ -21,10 +21,10 @@ const Header = () => {
               />
             </div>
           </div>
-        </div>
-        {/* mobile nav */}
-        <div className="lg:hidden absolute right-3 top-5">
-          <MobileNav />
+          {/* mobile nav */}
+          <div className="lg:hidden">
+            <MobileNav />
+          </div>
         </div>
       </div>
     </header>
@@ -32,4 +32,3 @@ const Header = () => {
 };
 
 export default Header;
-

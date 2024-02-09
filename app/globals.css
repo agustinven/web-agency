@@ -4,19 +4,15 @@
 
 @layer base {
   body {
-    @apply bg-body;
+    @apply bg-body text-white;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-white font-extrabold;
+
+  .h1 {
+    @apply font-bold text-[60px] lg:text-[80px] xl:text-[100px] leading-[70px] lg:leading-[93px] xl:leading-[110px];
   }
 
   .h2 {
-    @apply text-[32px];
+    @apply  text-[38px] md:text-[52px] text-white font-extrabold leading-tight;
   }
 
   .h3 {
@@ -26,4 +22,53 @@
   .h4 {
     @apply text-xl;
   }
+  
+  .scroller__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+  
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+      90deg,
+      
+    );
+  }
+  
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+  
+  .scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+  
+  .scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+  
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+  
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 140s;
+  }
+
+  .services__p {
+    @apply  text-[28px] md:text-[32px] text-gray
+  }
+  
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+  
+
 }
