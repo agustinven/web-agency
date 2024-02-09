@@ -18,7 +18,7 @@ const OurServices = () => {
     <div>
       <div className="mt-12 container mx-auto flex flex-col gap-x-12 lg:gap-x-[100px] xl:gap-x-[350px] justify-between md:flex-row ">
         {/* Title our services */}
-        <div className="">
+        <div>
           <div className="flex flex-col gap-y-4">
             <h2 className="h2">
               NUESTROS <br />
