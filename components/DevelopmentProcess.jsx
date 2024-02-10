@@ -4,7 +4,7 @@ const GridItem = ({ src, alt, title, text }) => (
   <div className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
     <Image
       src={src}
-      className="w-full h-[300px] lg:h-[320px] xl:h-[350px]  object-cover opacity-60 transition-transform duration-500 group-hover:scale-125"
+      className="w-full h-[300px] lg:h-[340px] xl:h-[360px]  object-cover opacity-60 transition-transform duration-500 group-hover:scale-125"
       width={300}
       height={300}
       alt={alt}
@@ -48,7 +48,7 @@ const DevelopmentProcess = () => {
             src={"/process/planification.jpg"}
             alt=""
             title="CONSULTA Y PLANIFICACIÓN"
-            text="En esta etapa inicial, nos sumergimos en tu visión y objetivos. Realizamos una consulta exhaustiva para comprender tus necesidades específicas y planificar estratégicamente cada paso del proceso de desarrollo digital. Nos aseguramos de establecer una base sólida para el éxito futuro de tu proyecto."
+            text="En esta etapa inicial, nos sumergimos en tu visión y objetivos. Realizamos una consulta exhaustiva para comprender tus necesidades específicas y planificar estratégicamente cada paso del proceso de desarrollo digital. "
           />
           <GridItem
             src={"/process/design.jpg"}
@@ -60,7 +60,7 @@ const DevelopmentProcess = () => {
             src={"/process/desarrollo.jpg"}
             alt=""
             title="DESARROLLO Y CODIFICACIÓN"
-            text="Nuestros desarrolladores transforman los diseños en realidad. Utilizando las últimas tecnologías y prácticas de codificación, construimos una solución digital robusta y escalable. Cada línea de código se escribe con precisión para garantizar un rendimiento óptimo y una experiencia de usuario excepcional."
+            text="Nuestros desarrolladores convierten diseños en una solución digital robusta y escalable, utilizando tecnologías de punta y codificación precisa para un rendimiento óptimo y una experiencia de usuario excepcional."
           />
           <GridItem
             src={"/process/test.jpg"}
