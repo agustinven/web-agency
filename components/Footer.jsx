@@ -2,7 +2,7 @@ import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
 
 const footer = () => {
   return (
-    <div className="container mt-12 mb-4 md:flex flex-row justify-between">
+    <div className="container mt-28 mb-4 md:flex flex-row justify-between">
       <div className="mt-2">
         <span className="text-xs">
           © 2024 Web Agency, todos los derechos reservados.
