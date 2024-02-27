@@ -38,6 +38,7 @@ module.exports = {
         secondary: "#292929",
         hero: "#181818",
         text: "#7E8B97",
+        button: "#2D2D2D"
       },
       red: "#9E8C90",
     },

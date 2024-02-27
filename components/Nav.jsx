@@ -25,7 +25,7 @@ const Nav = ({ containerStyles, listStyles }) => {
       <ul className={`${listStyles}`}>
         {links.map((link, index) => {
           return (
-            <li key={index}>
+            <li className="text-gray-text hover:text-white" key={index}>
               <Link href={link.path}>{link.pathname}</Link>
             </li>
           );

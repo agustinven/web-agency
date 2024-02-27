@@ -4,13 +4,7 @@ import { fadeIn } from "@/variant";
 import Image from "next/image";
 
 const GridItem = ({ src, alt, title, text }) => (
-  <motion.div
-    variants={fadeIn("up", 0.2)}
-    initial="hidden"
-    whileInView={"show"}
-    viewport={{ once: false, amount: 0.1 }}
-    className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30"
-  >
+  <div className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
     <Image
       src={src}
       className="w-full h-[300px] lg:h-[340px] xl:h-[360px]  object-cover opacity-60 transition-transform duration-500 group-hover:scale-125"
@@ -32,7 +26,7 @@ const GridItem = ({ src, alt, title, text }) => (
         {text}
       </p>
     </div>
-  </motion.div>
+  </div>
 );
 
 const DevelopmentProcess = () => {
@@ -58,7 +52,7 @@ const DevelopmentProcess = () => {
           </div>
         </motion.div>
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           <GridItem
             src={"/process/planification.webp"}
             alt=""

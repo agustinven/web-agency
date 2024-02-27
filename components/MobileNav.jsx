@@ -9,7 +9,7 @@ const MobileNav = () => {
       <SheetTrigger>
         <Menu size={36} className="text-white" />
       </SheetTrigger>
-      <SheetContent className="bg-body text-white border-gray-secondary" side="left">
+      <SheetContent className="bg-body border-gray-secondary" side="left">
         <div className="flex flex-col justify-between h-full p-12">
           <Nav
             containerStyles="text-white"

@@ -6,6 +6,7 @@ import Letstalk from "@/components/Letstalk";
 import Message from "@/components/Message";
 import OurServices from "@/components/OurServices";
 import Footer from "@/components/Footer"
+import { FloatingWhatsApp } from "../components/FloattingWhatsapp";
 
 export default function Home() {
   return (
@@ -18,6 +19,14 @@ export default function Home() {
       <DevelopmentProcess />
       <Letstalk />
       <Footer/>
+      <FloatingWhatsApp
+          phoneNumber="3512535710"
+          accountName="Corylus"
+          allowEsc
+          allowClickAway
+          notification
+          notificationSound
+        />
     </main>
   );
 }
