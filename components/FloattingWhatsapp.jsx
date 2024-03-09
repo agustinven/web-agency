@@ -2,12 +2,9 @@
 import { useReducer, useEffect, useCallback, useRef, useMemo } from "react";
 import { reducer } from "../reducer";
 import { WhatsappSVG, CloseSVG, CheckSVG, SendSVG } from "../components/Icons";
-import css from "../styles.module.css";
-
-//import darkBG from "./assets/bg-chat-tile-light.png"
-//import lightBG from "./assets/bg-chat-tile-dark.png"
+import css from "../app/styles.module.css";
+import Image from "next/image";
 import dummyAvatar from "../public/avatar.jpg";
-//import SoundBeep from "./assets/whatsapp-notification.mp3"
 
 export function FloatingWhatsApp({
   onClick,
@@ -27,7 +24,6 @@ export function FloatingWhatsApp({
   notificationDelay = 60,
   notificationLoop = 0,
   notificationSound = false,
-  //notificationSoundSrc = SoundBeep,
   notificationStyle,
   notificationClassName = "floating-whatsapp-notification",
   buttonStyle,
@@ -90,7 +86,7 @@ export function FloatingWhatsApp({
         "notificationDelay prop value must be at least 10 seconds."
       );
 
-    notificationInterval.current = window.setInterval(
+    notificationInterval.current = setInterval(
       handleNotification,
       delayInSecond
     );
@@ -130,15 +126,22 @@ export function FloatingWhatsApp({
   };
 
   useEffect(() => {
-    const onClickOutside = () => {
+    const handleClickOutside = (event) => {
       if (!allowClickAway || !isOpen) return;
 
-      handleClose();
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        handleClose();
+      }
     };
-    document.addEventListener("click", onClickOutside, false);
 
-    return () => document.removeEventListener("click", onClickOutside);
+    document.addEventListener("click", handleClickOutside, true);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
   }, [allowClickAway, isOpen, handleClose]);
+
+  const modalRef = useRef(null);
 
   useEffect(() => {
     const onEscKey = (event) => {
@@ -154,6 +157,7 @@ export function FloatingWhatsApp({
 
   return (
     <div
+      ref={modalRef}
       className={`${css.floatingWhatsapp} ${
         darkMode ? `${css.dark} ` : ""
       } ${className}`}
@@ -186,7 +190,7 @@ export function FloatingWhatsApp({
       >
         <header className={css.chatHeader}>
           <div className={css.avatar}>
-            <img src={avatar} width="60" height="60" alt="whatsapp-avatar" />
+            <Image src={avatar} width={60} height={60} alt="whatsapp-avatar" />
           </div>
           <div className={css.status}>
             <span className={css.statusTitle}>{accountName}</span>
@@ -197,10 +201,7 @@ export function FloatingWhatsApp({
           </div>
         </header>
 
-        <div
-          className={css.chatBody}
-          //style={{ backgroundImage: `url(${darkMode ? darkBG : lightBG})` }}
-        >
+        <div className={css.chatBody}>
           {isDelay ? (
             <div className={css.chatBubble}>
               <div className={css.typing}>
